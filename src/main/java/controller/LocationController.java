@@ -9,7 +9,7 @@
 
 package controller;
 
-//import platform.webservice.BaseController;
+import platform.webservice.BaseController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
 import platform.resource.BaseResource;
