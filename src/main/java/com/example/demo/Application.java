@@ -8,7 +8,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan(basePackages = {"controller", "platform.webservice.map", "platform.webservice.controller.base"})
+@ComponentScan(basePackages = {"controller", "platform.webservice.map", "platform.webservice.controller.base", "platform.webservice.controller.extended.LoginExtendedController"})
 public class Application {
     public static void main(String[] args) {
         System.out.println("Running Application....");
