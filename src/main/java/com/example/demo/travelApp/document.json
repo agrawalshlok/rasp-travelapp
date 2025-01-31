@@ -1,0 +1,48 @@
+{
+  "document": {
+    "cluster": "DB_PROFILE",
+    "ui": false,
+    "api": true,
+    "display_name": "document",
+    "fields": {
+      "id": {
+        "index": true,
+        "name": "id",
+        "length": 40,
+        "required": true,
+        "type": "String"
+      },
+      "document_name": {
+        "index": false,
+        "name": "document_name",
+        "length": 128,
+        "required": true,
+        "type": "String"
+      },
+      "file_format": {
+        "index": false,
+        "name": "file_format",
+        "length": 128,
+        "required": true,
+        "type": "String"
+      },
+      "file_size": {
+        "index": false,
+        "name": "file_size",
+        "length": 128,
+        "required": false,
+        "type": "String"
+      },
+      "passenger_id": {
+        "index": false,
+        "name": "passenger_id",
+        "length": 128,
+        "type": "String",
+        "required": false,
+        "foreign": {
+          "resource": "passenger"
+        }
+      }
+    }
+  }
+}

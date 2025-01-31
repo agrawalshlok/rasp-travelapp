@@ -1,0 +1,69 @@
+{
+  "passenger": {
+    "cluster": "DB_PROFILE",
+    "ui": false,
+    "api": true,
+    "display_name": "passenger",
+    "fields": {
+      "id": {
+        "index": true,
+        "name": "id",
+        "length": 40,
+        "required": true,
+        "type": "String"
+      },
+      "email": {
+        "index": false,
+        "name": "email",
+        "length": 128,
+        "required": true,
+        "type": "String"
+      },
+      "first_name": {
+        "index": false,
+        "name": "first_name",
+        "length": 128,
+        "required": true,
+        "type": "String"
+      },
+      "last_name": {
+        "index": false,
+        "name": "last_name",
+        "length": 128,
+        "required": true,
+        "type": "String"
+      },
+      "gender": {
+        "index": false,
+        "name": "gender",
+        "length": 128,
+        "required": false,
+        "type": "String"
+      },
+      "dob": {
+        "index": false,
+        "name": "dob",
+        "length": 128,
+        "type": "String",
+        "required": false
+      },
+      "phone_no": {
+        "index": false,
+        "name": "phone_no",
+        "length": 15,
+        "type": "String",
+        "required": false
+      },
+      "user_id": {
+        "index": false,
+        "name": "user_id",
+        "length": 128,
+        "type": "String",
+        "required": false,
+        "foreign": {
+          "resource": "user"
+        }
+      }
+    }
+  }
+}

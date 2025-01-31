@@ -1,0 +1,40 @@
+{
+  "location": {
+    "cluster": "DB_PROFILE",
+    "ui": false,
+    "api": true,
+    "display_name": "location",
+    "fields": {
+      "id": {
+        "index": true,
+        "name": "id",
+        "length": 40,
+        "required": true,
+        "type": "String"
+      },
+      "location_name": {
+        "index": true,
+        "name": "location_name",
+        "length": 128,
+        "type": "String",
+        "required": true
+      },
+      "location_code": {
+        "index": true,
+        "name": "location_code",
+        "length": 128,
+        "type": "String",
+        "required": true
+
+      },
+      "status": {
+        "index": true,
+        "name": "status",
+        "length": 128,
+        "type": "String",
+        "required": false
+
+      }
+    }
+  }
+}

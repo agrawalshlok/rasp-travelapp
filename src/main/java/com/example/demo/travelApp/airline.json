@@ -1,0 +1,39 @@
+{
+  "airline": {
+    "cluster": "DB_PROFILE",
+    "ui": false,
+    "api": true,
+    "display_name": "airline",
+    "fields": {
+      "id": {
+        "index": true,
+        "name": "id",
+        "length": 40,
+        "required": true,
+        "type": "String"
+      },
+      "airline_name": {
+        "index": true,
+        "name": "airline_name",
+        "length": 128,
+        "type": "String",
+        "required": true
+      },
+      "airline_code": {
+        "index": true,
+        "name": "airline_code",
+        "length": 128,
+        "type": "String",
+        "required": true
+      },
+      "status": {
+        "index": true,
+        "name": "status",
+        "length": 128,
+        "type": "String",
+        "required": false
+
+      }
+    }
+  }
+}

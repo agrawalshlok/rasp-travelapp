@@ -1,0 +1,59 @@
+{
+  "user": {
+    "cluster": "DB_PROFILE",
+    "ui": false,
+    "api": true,
+    "display_name": "user",
+    "fields": {
+      "id": {
+        "index": true,
+        "name": "id",
+        "length": 40,
+        "required": true,
+        "type": "String"
+      },
+      "email": {
+        "index": false,
+        "name": "email",
+        "length": 128,
+        "required": true,
+        "type": "String"
+      },
+      "password": {
+        "index": false,
+        "name": "password",
+        "length": 128,
+        "required": true,
+        "type": "String"
+      },
+      "name": {
+        "index": false,
+        "name": "name",
+        "length": 128,
+        "required": true,
+        "type": "String"
+      },
+      "gender": {
+        "index": false,
+        "name": "gender",
+        "length": 128,
+        "required": false,
+        "type": "String"
+      },
+      "dob": {
+        "index": false,
+        "name": "dob",
+        "length": 128,
+        "type": "String",
+        "required": false
+      },
+      "phone_no": {
+        "index": false,
+        "name": "phone_no",
+        "length": 15,
+        "type": "String",
+        "required": false
+      }
+    }
+  }
+}

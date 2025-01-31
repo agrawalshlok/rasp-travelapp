@@ -1,0 +1,94 @@
+{
+  "flight": {
+    "cluster": "DB_PROFILE",
+    "ui": false,
+    "api": true,
+    "display_name": "flight",
+    "fields": {
+      "id": {
+        "index": true,
+        "name": "id",
+        "length": 40,
+        "required": true,
+        "type": "String"
+      },
+      "airline_id": {
+        "index": false,
+        "name": "airline_id",
+        "length": 128,
+        "type": "String",
+        "required": false,
+        "foreign": {
+          "resource": "airline"
+        }
+      },
+      "airline_name": {
+        "index": false,
+        "name": "airline_name",
+        "length": 128,
+        "type": "String",
+        "required": false,
+        "foreign_derived": {
+          "parent_field": "airline_id",
+          "foreign_field": "airline_name"
+        }
+      },
+      "destination_location_id": {
+        "index": false,
+        "name": "destination_location_id",
+        "length": 128,
+        "type": "String",
+        "required": false,
+        "foreign": {
+          "resource": "location"
+        }
+      },
+      "departure_location_id": {
+        "index": false,
+        "name": "departure_location_id",
+        "length": 128,
+        "type": "String",
+        "required": false,
+        "foreign": {
+          "resource": "location"
+        }
+      },
+      "departure_date_and_time": {
+        "index": false,
+        "name": "departure_date_and_time",
+        "length": 128,
+        "type": "timestamp",
+        "required": false
+
+      },
+      "arrival_date_and_time": {
+        "index": false,
+        "name": "arrival_date_and_time",
+        "length": 128,
+        "type": "timestamp",
+        "required": false
+
+      },
+      "status": {
+        "index": false,
+        "name": "status",
+        "length": 128,
+        "type": "String",
+        "required": false
+
+      },
+      "price": {
+        "index": false,
+        "name": "status",
+        "type": "long",
+        "required": false
+      },
+      "capacity": {
+        "index": false,
+        "name": "status",
+        "type": "long",
+        "required": false
+      }
+    }
+  }
+}
