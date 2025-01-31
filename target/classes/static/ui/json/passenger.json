@@ -63,16 +63,6 @@
         "foreign": {
           "resource": "user"
         }
-      },
-      "booking_id": {
-        "index": false,
-        "name": "booking_id",
-        "length": 128,
-        "type": "String",
-        "required": false,
-        "foreign": {
-          "resource": "booking"
-        }
       }
     }
   }

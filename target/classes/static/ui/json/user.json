@@ -1,9 +1,9 @@
 {
-  "passenger": {
+  "user": {
     "cluster": "DB_PROFILE",
     "ui": false,
     "api": true,
-    "display_name": "passenger",
+    "display_name": "user",
     "fields": {
       "id": {
         "index": true,
@@ -19,16 +19,16 @@
         "required": true,
         "type": "String"
       },
-      "first_name": {
+      "password": {
         "index": false,
-        "name": "first_name",
+        "name": "password",
         "length": 128,
         "required": true,
         "type": "String"
       },
-      "last_name": {
+      "name": {
         "index": false,
-        "name": "last_name",
+        "name": "name",
         "length": 128,
         "required": true,
         "type": "String"
@@ -53,26 +53,6 @@
         "length": 15,
         "type": "String",
         "required": false
-      },
-      "user_id": {
-        "index": false,
-        "name": "user_id",
-        "length": 128,
-        "type": "String",
-        "required": false,
-        "foreign": {
-          "resource": "user"
-        }
-      },
-      "booking_id": {
-        "index": false,
-        "name": "booking_id",
-        "length": 128,
-        "type": "String",
-        "required": false,
-        "foreign": {
-          "resource": "booking"
-        }
       }
     }
   }

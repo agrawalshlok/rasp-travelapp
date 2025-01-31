@@ -1,0 +1,61 @@
+{
+  "booking": {
+    "cluster": "DB_PROFILE",
+    "ui": false,
+    "api": true,
+    "display_name": "booking",
+    "fields": {
+      "id": {
+        "index": true,
+        "name": "id",
+        "length": 40,
+        "required": true,
+        "type": "String"
+      },
+      "flight_id": {
+        "index": false,
+        "name": "flight_id",
+        "length": 128,
+        "type": "String",
+        "required": false,
+        "foreign": {
+          "resource": "flight"
+        }
+      },
+      "user_id": {
+        "index": false,
+        "name": "user_id",
+        "length": 128,
+        "type": "String",
+        "required": false,
+        "foreign": {
+          "resource": "user"
+        }
+      },
+      "booking_date_and_time": {
+        "index": false,
+        "name": "booking_date_and_time",
+        "length": 128,
+        "type": "timestamp",
+        "required": false
+
+      },
+      "status": {
+        "index": false,
+        "name": "status",
+        "length": 128,
+        "type": "String",
+        "required": false
+
+      },
+      "confirmation_number": {
+        "index": false,
+        "name": "confirmation_number",
+        "length": 128,
+        "type": "String",
+        "required": false
+
+      }
+    }
+  }
+}

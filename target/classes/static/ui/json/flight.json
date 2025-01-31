@@ -13,7 +13,7 @@
         "type": "String"
       },
       "airline_id": {
-        "index": true,
+        "index": false,
         "name": "airline_id",
         "length": 128,
         "type": "String",
@@ -23,7 +23,7 @@
         }
       },
       "airline_name": {
-        "index": true,
+        "index": false,
         "name": "airline_name",
         "length": 128,
         "type": "String",
@@ -34,7 +34,7 @@
         }
       },
       "destination_location_id": {
-        "index": true,
+        "index": false,
         "name": "destination_location_id",
         "length": 128,
         "type": "String",
@@ -44,7 +44,7 @@
         }
       },
       "departure_location_id": {
-        "index": true,
+        "index": false,
         "name": "departure_location_id",
         "length": 128,
         "type": "String",
@@ -54,23 +54,23 @@
         }
       },
       "departure_date_and_time": {
-        "index": true,
+        "index": false,
         "name": "departure_date_and_time",
         "length": 128,
-        "type": "String",
+        "type": "timestamp",
         "required": false
 
       },
       "arrival_date_and_time": {
-        "index": true,
+        "index": false,
         "name": "arrival_date_and_time",
         "length": 128,
-        "type": "String",
+        "type": "timestamp",
         "required": false
 
       },
       "status": {
-        "index": true,
+        "index": false,
         "name": "status",
         "length": 128,
         "type": "String",
@@ -78,13 +78,13 @@
 
       },
       "price": {
-        "index": true,
+        "index": false,
         "name": "status",
         "type": "long",
         "required": false
       },
       "capacity": {
-        "index": true,
+        "index": false,
         "name": "status",
         "type": "long",
         "required": false

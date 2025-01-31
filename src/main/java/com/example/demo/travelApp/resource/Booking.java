@@ -23,7 +23,7 @@ import com.example.demo.travelApp.service.*;
  ********** This is a generated class Don't modify it.Extend this file for additional functionality **********
  * 
  */
-public class Passenger extends BaseResource {
+public class Booking extends BaseResource {
 	private String id = null;
 	private String g_created_by_id = null;
 	private String g_created_by_name = null;
@@ -35,14 +35,11 @@ public class Passenger extends BaseResource {
 	private String g_status = null;
 	private String archived = null;
 	private Long archived_time = null;
-	private String email = null;
-	private String first_name = null;
-	private String last_name = null;
-	private String gender = null;
-	private String dob = null;
-	private String phone_no = null;
+	private String flight_id = null;
 	private String user_id = null;
-	private String booking_id = null;
+	private Long booking_date_and_time = null;
+	private String status = null;
+	private String confirmation_number = null;
 	private Map<String, Object> extra_data = null;
 
 	public static String FIELD_ID = "id";
@@ -56,18 +53,15 @@ public class Passenger extends BaseResource {
 	public static String FIELD_G_STATUS = "g_status";
 	public static String FIELD_ARCHIVED = "archived";
 	public static String FIELD_ARCHIVED_TIME = "archived_time";
-	public static String FIELD_EMAIL = "email";
-	public static String FIELD_FIRST_NAME = "first_name";
-	public static String FIELD_LAST_NAME = "last_name";
-	public static String FIELD_GENDER = "gender";
-	public static String FIELD_DOB = "dob";
-	public static String FIELD_PHONE_NO = "phone_no";
+	public static String FIELD_FLIGHT_ID = "flight_id";
 	public static String FIELD_USER_ID = "user_id";
-	public static String FIELD_BOOKING_ID = "booking_id";
+	public static String FIELD_BOOKING_DATE_AND_TIME = "booking_date_and_time";
+	public static String FIELD_STATUS = "status";
+	public static String FIELD_CONFIRMATION_NUMBER = "confirmation_number";
 	public static String FIELD_EXTRA_DATA = "extra_data";
 
 	private static final long serialVersionUID = 1L;
-	public final static ResourceMetaData metaData = new ResourceMetaData("passenger");
+	public final static ResourceMetaData metaData = new ResourceMetaData("booking");
 
 	static {
 		metaData.setCheckBeforeAdd(false);
@@ -121,57 +115,42 @@ public class Passenger extends BaseResource {
 		Field archived_timeField = new Field("archived_time", "long");
 		metaData.addField(archived_timeField);
 
-		Field emailField = new Field("email", "String");
-		emailField.setRequired(true);
-		emailField.setLength(128);
-		metaData.addField(emailField);
-
-		Field first_nameField = new Field("first_name", "String");
-		first_nameField.setRequired(true);
-		first_nameField.setLength(128);
-		metaData.addField(first_nameField);
-
-		Field last_nameField = new Field("last_name", "String");
-		last_nameField.setRequired(true);
-		last_nameField.setLength(128);
-		metaData.addField(last_nameField);
-
-		Field genderField = new Field("gender", "String");
-		genderField.setLength(128);
-		metaData.addField(genderField);
-
-		Field dobField = new Field("dob", "String");
-		dobField.setLength(128);
-		metaData.addField(dobField);
-
-		Field phone_noField = new Field("phone_no", "String");
-		phone_noField.setLength(15);
-		metaData.addField(phone_noField);
+		Field flight_idField = new Field("flight_id", "String");
+		flight_idField.setForeign(new Foreign("flight"));
+		flight_idField.setLength(128);
+		metaData.addField(flight_idField);
 
 		Field user_idField = new Field("user_id", "String");
 		user_idField.setForeign(new Foreign("user"));
 		user_idField.setLength(128);
 		metaData.addField(user_idField);
 
-		Field booking_idField = new Field("booking_id", "String");
-		booking_idField.setForeign(new Foreign("booking"));
-		booking_idField.setLength(128);
-		metaData.addField(booking_idField);
+		Field booking_date_and_timeField = new Field("booking_date_and_time", "timestamp");
+		booking_date_and_timeField.setLength(128);
+		metaData.addField(booking_date_and_timeField);
+
+		Field statusField = new Field("status", "String");
+		statusField.setLength(128);
+		metaData.addField(statusField);
+
+		Field confirmation_numberField = new Field("confirmation_number", "String");
+		confirmation_numberField.setLength(128);
+		metaData.addField(confirmation_numberField);
 
 		Field extra_dataField = new Field("extra_data", "Map");
 		extra_dataField.setValueType("Object");
 		metaData.addField(extra_dataField);
 
 
-		metaData.setTableName("passenger");
+		metaData.setTableName("booking");
 
 		metaData.setCluster("DB_PROFILE");
 	}
 
-	public Passenger() {this.setId(Util.getUniqueId());}
-	public Passenger(String id) {this.setId(id);}
+	public Booking() {this.setId(Util.getUniqueId());}
+	public Booking(String id) {this.setId(id);}
 
-	public Passenger(Passenger obj) {
+	public Booking(Booking obj) {
 		this.id = obj.id;
 		this.g_created_by_id = obj.g_created_by_id;
 		this.g_created_by_name = obj.g_created_by_name;
@@ -183,14 +162,11 @@ public class Passenger extends BaseResource {
 		this.g_status = obj.g_status;
 		this.archived = obj.archived;
 		this.archived_time = obj.archived_time;
-		this.email = obj.email;
-		this.first_name = obj.first_name;
-		this.last_name = obj.last_name;
-		this.gender = obj.gender;
-		this.dob = obj.dob;
-		this.phone_no = obj.phone_no;
+		this.flight_id = obj.flight_id;
 		this.user_id = obj.user_id;
-		this.booking_id = obj.booking_id;
+		this.booking_date_and_time = obj.booking_date_and_time;
+		this.status = obj.status;
+		this.confirmation_number = obj.confirmation_number;
 		this.extra_data = obj.extra_data;
 	}
 
@@ -228,22 +204,16 @@ public class Passenger extends BaseResource {
 			map.put("archived", archived);
 		if(archived_time != null)
 			map.put("archived_time", archived_time);
-		if(email != null)
-			map.put("email", email);
-		if(first_name != null)
-			map.put("first_name", first_name);
-		if(last_name != null)
-			map.put("last_name", last_name);
-		if(gender != null)
-			map.put("gender", gender);
-		if(dob != null)
-			map.put("dob", dob);
-		if(phone_no != null)
-			map.put("phone_no", phone_no);
+		if(flight_id != null)
+			map.put("flight_id", flight_id);
 		if(user_id != null)
 			map.put("user_id", user_id);
-		if(booking_id != null)
-			map.put("booking_id", booking_id);
+		if(booking_date_and_time != null)
+			map.put("booking_date_and_time", booking_date_and_time);
+		if(status != null)
+			map.put("status", status);
+		if(confirmation_number != null)
+			map.put("confirmation_number", confirmation_number);
 		if(extra_data != null)
 			map.put("extra_data", extra_data);
 		return map;
@@ -272,22 +242,16 @@ public class Passenger extends BaseResource {
 			map.put("archived", archived);
 		if(archived_time != null)
 			map.put("archived_time", archived_time);
-		if(validateEmail(add))
-			map.put("email", email);
-		if(validateFirst_name(add))
-			map.put("first_name", first_name);
-		if(validateLast_name(add))
-			map.put("last_name", last_name);
-		if(gender != null)
-			map.put("gender", gender);
-		if(dob != null)
-			map.put("dob", dob);
-		if(phone_no != null)
-			map.put("phone_no", phone_no);
+		if(flight_id != null)
+			map.put("flight_id", flight_id);
 		if(user_id != null)
 			map.put("user_id", user_id);
-		if(booking_id != null)
-			map.put("booking_id", booking_id);
+		if(booking_date_and_time != null)
+			map.put("booking_date_and_time", booking_date_and_time);
+		if(status != null)
+			map.put("status", status);
+		if(confirmation_number != null)
+			map.put("confirmation_number", confirmation_number);
 		if(extra_data != null)
 			map.put("extra_data", extra_data);
 		return map;
@@ -310,14 +274,11 @@ public class Passenger extends BaseResource {
 		g_status = (String) map.get("g_status");
 		archived = (String) map.get("archived");
 		archived_time = (map.get("archived_time") == null ? null : ((Number) map.get("archived_time")).longValue());
-		email = (String) map.get("email");
-		first_name = (String) map.get("first_name");
-		last_name = (String) map.get("last_name");
-		gender = (String) map.get("gender");
-		dob = (String) map.get("dob");
-		phone_no = (String) map.get("phone_no");
+		flight_id = (String) map.get("flight_id");
 		user_id = (String) map.get("user_id");
-		booking_id = (String) map.get("booking_id");
+		booking_date_and_time = (map.get("booking_date_and_time") == null ? null : ((Number) map.get("booking_date_and_time")).longValue());
+		status = (String) map.get("status");
+		confirmation_number = (String) map.get("confirmation_number");
 		extra_data = (Map<String, Object>) map.get("extra_data");
 	}
 
@@ -367,37 +328,25 @@ public class Passenger extends BaseResource {
 		if(archived_timeObj != null)
 			archived_time = new Long(archived_timeObj.toString());
 
-		Object emailObj = map.get("email");
-		if(emailObj != null)
-			email = emailObj.toString();
-
-		Object first_nameObj = map.get("first_name");
-		if(first_nameObj != null)
-			first_name = first_nameObj.toString();
-
-		Object last_nameObj = map.get("last_name");
-		if(last_nameObj != null)
-			last_name = last_nameObj.toString();
-
-		Object genderObj = map.get("gender");
-		if(genderObj != null)
-			gender = genderObj.toString();
-
-		Object dobObj = map.get("dob");
-		if(dobObj != null)
-			dob = dobObj.toString();
-
-		Object phone_noObj = map.get("phone_no");
-		if(phone_noObj != null)
-			phone_no = phone_noObj.toString();
+		Object flight_idObj = map.get("flight_id");
+		if(flight_idObj != null)
+			flight_id = flight_idObj.toString();
 
 		Object user_idObj = map.get("user_id");
 		if(user_idObj != null)
 			user_id = user_idObj.toString();
 
-		Object booking_idObj = map.get("booking_id");
-		if(booking_idObj != null)
-			booking_id = booking_idObj.toString();
+		Object booking_date_and_timeObj = map.get("booking_date_and_time");
+		if(booking_date_and_timeObj != null)
+			booking_date_and_time = new Long(booking_date_and_timeObj.toString());
+
+		Object statusObj = map.get("status");
+		if(statusObj != null)
+			status = statusObj.toString();
+
+		Object confirmation_numberObj = map.get("confirmation_number");
+		if(confirmation_numberObj != null)
+			confirmation_number = confirmation_numberObj.toString();
 
 		extra_data = (Map<String, Object>) map.get("extra_data");
 	}
@@ -597,118 +546,20 @@ public class Passenger extends BaseResource {
 		this.archived_time = null;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getFlight_id() {
+		return flight_id;
 	}
 
-	public String getEmailEx() {
-		return email != null ? email : "";
+	public String getFlight_idEx() {
+		return flight_id != null ? flight_id : "";
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setFlight_id(String flight_id) {
+		this.flight_id = flight_id;
 	}
 
-	public void unSetEmail() {
-		this.email = null;
-	}
-
-	public boolean validateEmail(boolean add) throws ApplicationException {
-		if(add && email == null)
-			throw new ApplicationException(ExceptionSeverity.ERROR, "Requierd validation Failed[email]");
-		return email != null;
-	}
-
-	public String getFirst_name() {
-		return first_name;
-	}
-
-	public String getFirst_nameEx() {
-		return first_name != null ? first_name : "";
-	}
-
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
-	}
-
-	public void unSetFirst_name() {
-		this.first_name = null;
-	}
-
-	public boolean validateFirst_name(boolean add) throws ApplicationException {
-		if(add && first_name == null)
-			throw new ApplicationException(ExceptionSeverity.ERROR, "Requierd validation Failed[first_name]");
-		return first_name != null;
-	}
-
-	public String getLast_name() {
-		return last_name;
-	}
-
-	public String getLast_nameEx() {
-		return last_name != null ? last_name : "";
-	}
-
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
-	}
-
-	public void unSetLast_name() {
-		this.last_name = null;
-	}
-
-	public boolean validateLast_name(boolean add) throws ApplicationException {
-		if(add && last_name == null)
-			throw new ApplicationException(ExceptionSeverity.ERROR, "Requierd validation Failed[last_name]");
-		return last_name != null;
-	}
-
-	public String getGender() {
-		return gender;
-	}
-
-	public String getGenderEx() {
-		return gender != null ? gender : "";
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
-	public void unSetGender() {
-		this.gender = null;
-	}
-
-	public String getDob() {
-		return dob;
-	}
-
-	public String getDobEx() {
-		return dob != null ? dob : "";
-	}
-
-	public void setDob(String dob) {
-		this.dob = dob;
-	}
-
-	public void unSetDob() {
-		this.dob = null;
-	}
-
-	public String getPhone_no() {
-		return phone_no;
-	}
-
-	public String getPhone_noEx() {
-		return phone_no != null ? phone_no : "";
-	}
-
-	public void setPhone_no(String phone_no) {
-		this.phone_no = phone_no;
-	}
-
-	public void unSetPhone_no() {
-		this.phone_no = null;
+	public void unSetFlight_id() {
+		this.flight_id = null;
 	}
 
 	public String getUser_id() {
@@ -727,20 +578,45 @@ public class Passenger extends BaseResource {
 		this.user_id = null;
 	}
 
-	public String getBooking_id() {
-		return booking_id;
+	public Long getBooking_date_and_time() {
+		return booking_date_and_time;
 	}
 
-	public String getBooking_idEx() {
-		return booking_id != null ? booking_id : "";
+	public void setBooking_date_and_time(Long booking_date_and_time) {
+		this.booking_date_and_time = booking_date_and_time;
 	}
 
-	public void setBooking_id(String booking_id) {
-		this.booking_id = booking_id;
+
+	public String getStatus() {
+		return status;
 	}
 
-	public void unSetBooking_id() {
-		this.booking_id = null;
+	public String getStatusEx() {
+		return status != null ? status : "";
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public void unSetStatus() {
+		this.status = null;
+	}
+
+	public String getConfirmation_number() {
+		return confirmation_number;
+	}
+
+	public String getConfirmation_numberEx() {
+		return confirmation_number != null ? confirmation_number : "";
+	}
+
+	public void setConfirmation_number(String confirmation_number) {
+		this.confirmation_number = confirmation_number;
+	}
+
+	public void unSetConfirmation_number() {
+		this.confirmation_number = null;
 	}
 
 	public Map<String, Object> getExtra_data() {
@@ -770,8 +646,8 @@ public class Passenger extends BaseResource {
 	public String getClusterType() {
 		return "REPLICATED";
 	}
-	public  Class<?> getResultClass() {return PassengerResult.class;};
-	public  Class<?> getMessageClass() {return PassengerMessage.class;};
-	public  Class<?> getHelperClass() {return PassengerHelper.class;};
-	public  Class<?> getServiceClass() {return PassengerService.class;};
+	public  Class<?> getResultClass() {return BookingResult.class;};
+	public  Class<?> getMessageClass() {return BookingMessage.class;};
+	public  Class<?> getHelperClass() {return BookingHelper.class;};
+	public  Class<?> getServiceClass() {return BookingService.class;};
 }

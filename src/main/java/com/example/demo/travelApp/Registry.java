@@ -7,6 +7,7 @@ public class Registry {
 		public static void register(){
 				 HelperManager.getInstance().register(SuperAdminHelper.getInstance());
 				 HelperManager.getInstance().register(FlightHelper.getInstance());
+				 HelperManager.getInstance().register(BookingHelper.getInstance());
 				 HelperManager.getInstance().register(AirlineAdminHelper.getInstance());
 				 HelperManager.getInstance().register(PassengerHelper.getInstance());
 				 HelperManager.getInstance().register(DocumentHelper.getInstance());
@@ -15,6 +16,7 @@ public class Registry {
 				 HelperManager.getInstance().register(UserHelper.getInstance());
 				 ServiceManager.getInstance().register(new SuperAdminService());
 				 ServiceManager.getInstance().register(new FlightService());
+				 ServiceManager.getInstance().register(new BookingService());
 				 ServiceManager.getInstance().register(new AirlineAdminService());
 				 ServiceManager.getInstance().register(new PassengerService());
 				 ServiceManager.getInstance().register(new DocumentService());
