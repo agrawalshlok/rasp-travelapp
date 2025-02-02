@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 //@EnableSwagger2
-@ComponentScan(basePackages = {"controller", "platform.webservice.map", "platform.webservice.controller.base", "platform.webservice.controller.extended.LoginExtendedController"})
+@ComponentScan(basePackages = {"controller", "platform.webservice.map", "platform.webservice.controller.base", "platform.webservice.controller.extended"})
 //@ComponentScan(basePackages = {"controller", "platform.webservice.map", "platform.webservice.controller.base"})
 
 public class DemoApplication {
