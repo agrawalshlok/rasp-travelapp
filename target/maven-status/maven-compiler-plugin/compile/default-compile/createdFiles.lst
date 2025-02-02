@@ -1,9 +1,9 @@
 controller/PassengerController.class
 com/example/demo/travelApp/message/FlightMessage.class
-com/example/demo/travelApp/message/LocationMessage.class
 com/example/demo/travelApp/service/FlightService.class
-com/example/demo/travelApp/message/AirlineMessage.class
+com/example/demo/travelApp/message/LocationMessage.class
 com/example/demo/travelApp/service/UserService.class
+com/example/demo/travelApp/message/AirlineMessage.class
 com/example/demo/travelApp/resource/User.class
 controller/AirlineAdminController.class
 com/example/demo/travelApp/helper/DocumentHelper.class
@@ -26,7 +26,6 @@ com/example/demo/travelApp/resource/Flight.class
 com/example/demo/travelApp/resource/Booking.class
 com/example/demo/travelApp/resource/SuperAdminResult.class
 com/example/demo/travelApp/resource/SuperAdmin.class
-com/example/demo/Application.class
 com/example/demo/travelApp/helper/BookingHelper.class
 controller/LocationController.class
 com/example/demo/travelApp/message/DocumentMessage.class
@@ -35,8 +34,8 @@ com/example/demo/travelApp/message/PassengerMessage.class
 com/example/demo/travelApp/resource/PassengerResult.class
 com/example/demo/travelApp/resource/Location.class
 controller/BookingController.class
-com/example/demo/travelApp/resource/UserResult.class
 com/example/demo/travelApp/resource/BookingResult.class
+com/example/demo/travelApp/resource/UserResult.class
 com/example/demo/DemoApplication.class
 controller/UserController.class
 com/example/demo/travelApp/resource/Airline.class
