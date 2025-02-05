@@ -1,0 +1,14 @@
+//login
+{
+  "user" : "admin3@rasp.com",
+  "password" : "admin@123"
+}
+
+//airline
+
+{
+  "airline_name": "Indigo Airlines",
+  "airline_code": "SHA",
+  "status": "active"
+}
+

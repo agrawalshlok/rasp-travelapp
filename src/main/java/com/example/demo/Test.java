@@ -2,8 +2,8 @@ package com.example.demo;
 
 import com.example.demo.travelApp.resource.User;
 import com.example.demo.travelApp.helper.UserHelper;
-//import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.mindrot.jbcrypt.BCrypt;
+//import org.springframework.security.crypto.bcrypt.BCrypt;
 //import platform.defined.resource.User;
 
 public class Test {
@@ -12,6 +12,8 @@ public class Test {
         String salt = BCrypt.gensalt(12);
         String doubleMd5 = BCrypt.hashpw("admin@123", salt);
 
+
+        //code for travel app user
         User user = new User("admin3@rasp.com");
         user.setEmail("admin2@rasp.com");
         user.setPhone_no("123456789");
