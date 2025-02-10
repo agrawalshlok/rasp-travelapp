@@ -1,4 +1,6 @@
 package controller;
+
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.*;
 import platform.defined.resource.AuditLog;
 import platform.defined.service.AuditLogService;
@@ -12,11 +14,10 @@ import platform.util.security.SecurityUtil;
 import platform.webservice.BaseService;
 import platform.webservice.ServletContext;
 
-import javax.servlet.http.HttpServletRequest;
+//import javax.servlet.http.HttpServletRequest;
 import java.net.URLDecoder;
 import java.util.HashMap;
 import java.util.Map;
-
 public class BaseController {
     BaseService service;
     BaseResource resource;
@@ -28,11 +29,11 @@ public class BaseController {
         this.service = service;
         this.resource = resource;
     }
+
+
     protected boolean isLoginRequired() {
         return true;
-//        return false;
     }
-
     ServletContext validSession(String sessionId) throws ApplicationException {
         if (!isLoginRequired()) {
             return null;
@@ -102,15 +103,15 @@ public class BaseController {
                 }
             }
             BaseResource[] resources = service.getQuery(ctx,queryId,map);
-            if (isLoginRequired()) {
-                if (!Util.isEmpty(resources)) {
-                    if (isFieldEncryptionRequired(resources[0])) {
-                        for (BaseResource resource : resources) {
-                            encrypt_resource_field(ctx, resource);
-                        }
-                    }
-                }
-            }
+//            if (isLoginRequired()) {
+//                if (!Util.isEmpty(resources)) {
+//                    if (isFieldEncryptionRequired(resources[0])) {
+//                        for (BaseResource resource : resources) {
+//                            encrypt_resource_field(ctx, resource);
+//                        }
+//                    }
+//                }
+//            }
             result.setErrCode(0);
             result.setMessage("Success");
             result.setResource(resources);
@@ -192,6 +193,7 @@ public class BaseController {
         }
         return request.getRemoteAddr();
     }
+
 
     protected String getAuditLogString(BaseResource resource) {
         return Json.objecttoString(resource);
@@ -297,4 +299,5 @@ public class BaseController {
             excep.printStackTrace();
         }
     }
+
 }
