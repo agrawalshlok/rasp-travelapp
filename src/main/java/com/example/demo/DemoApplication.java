@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.travelApp.Registry;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 public class DemoApplication {
 	public static void main(String[] args) {
+		Registry.register();
 		System.out.println("Running Application....");
 		ApplicationContext ctx = SpringApplication.run(DemoApplication.class, args);
 	}

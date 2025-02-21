@@ -7,8 +7,69 @@
 //airline
 
 {
-  "airline_name": "Indigo Airlines",
+  "airline_name": "Vistara Airlines",
   "airline_code": "SHA",
   "status": "active"
 }
 
+// user
+{
+  "email": "shlok@gmail.com",
+  "password": "1234",
+  "name": "shlok",
+  "gender": "female",
+  "dob": "26/12/1990",
+  "phone_no": "1234567890"
+}
+
+// user Modified
+{
+  "id" : "f90598a7-ba8f-4119-997c-4c79a7c93964-63",
+  "email": "shlok26@gmail.com",
+  "password": "1234",
+  "name": "shlok"
+}
+
+// airline_admin
+{
+    "email": "airlineadmin@gmail.com",
+    "password": "12345",
+    "name": "airline_admin1",
+    "airline_id": "cb3a40e8-14f2-44af-8f40-51adea4fc2f1-62"
+}
+
+// passenger
+{
+  "email": "shlok@gmail.com",
+  "first_name": "shlok",
+  "last_name": "agrawal",
+  "gender": "male",
+  "dob": "26/12/2002",
+  "phone_no": "1234567891",
+  "user_id": "f90598a7-ba8f-4119-997c-4c79a7c93964-63",
+  "booking_id": "0"
+}
+
+// passenger without bookingid
+{
+  "email": "shlok@gmail.com",
+  "first_name": "shlok",
+  "last_name": "agrawal",
+  "gender": "male",
+  "dob": "26/12/2002",
+  "phone_no": "1234567891",
+  "user_id": "f90598a7-ba8f-4119-997c-4c79a7c93964-63"
+}
+
+// booking
+{
+  "id": "0"
+}
+{
+  "id": "2",
+  "user_id": "f90598a7-ba8f-4119-997c-4c79a7c93964-63"
+}
+{
+  "id": "1",
+  "booking_date_and_time": 1740042600
+}
